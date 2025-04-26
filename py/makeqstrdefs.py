@@ -201,7 +201,7 @@ if __name__ == "__main__":
                 current_tok = arg
             else:
                 named_args[current_tok].append(arg)
-
+        named_args["cxxflags"] = [x for x in named_args["cflags"]]
         if not named_args["pp"] or len(named_args["output"]) != 1:
             print("usage: %s %s ..." % (sys.argv[0], " ... ".join(named_args)))
             sys.exit(2)
